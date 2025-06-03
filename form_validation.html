@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label,
+        input {
+            font-family: garamond,serif;
+            font-size: x-large;
+            display: block;
+        }
+        input{
+            border-radius: 5px;
+            margin-top: 5px;
+            width: 200px;
+            height: 30px;
+        }
+        .main{
+            margin: 80px;
+            margin-left:40%;
+            border-radius: 50px;
+            align-items: center;
+            border: 2px;
+            width: 400px;
+            height:500px;
+            border-style: solid;
+
+        }
+        form{
+          padding: 100px;
+        } 
+        span{
+            color: red;
+            font-size: medium;
+        }
+       
+    </style>
+</head>
+
+<body style="background-color: rgb(205, 255, 247);"> 
+     <h1 style="text-align: center;">Simple Registration Form</h1>
+    <div class="main" style="background-color: rgb(255, 255, 255);">
+       
+    <form onsubmit="return formDone()">
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <span id="ns"></span>
+
+        <label for="mobno">Mob No:</label>
+        <input type="number" id="mobno">
+        <span id="ms"></span>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email">
+        <span id="es"></span>
+
+        <label for="pass">PassWord:</label>
+        <input type="password" id="pass">
+        <span id="es"></span>
+
+        <button type="submit" style="width: 200px; height: 30px;background-color: rgb(97, 97, 209); color: white;border-radius: 5px; margin-top: 10px; margin-left: 3px;"> submit</button>
+    </form> 
+    </div>
+</body>
+<script>
+    function formDone() {
+        let names = document.getElementById("name").value;
+        let mobno = document.getElementById("mobno").value;
+        let email = document.getElementById("email").value;
+        if (names ==="") {
+            document.getElementById("ns").innerHTML = "*enter name";
+            return false;
+        }
+        else{
+            document.getElementById("ns").innerHTML = "";
+        }
+        if(mobno==""){
+            document.getElementById("ms").innerHTML = "*enter number ";
+            return false
+        }
+        else if(mobno==isNaN()){
+            document.getElementById("ms").innerHTML = "*enter valid number ";
+            return false
+        }
+        else{
+              document.getElementById("ms").innerHTML = "";
+        }
+        if (email === "") {
+            document.getElementById("es").innerHTML = "*enter email ";
+            return false
+        }
+        else{
+             document.getElementById("es").innerHTML = "";
+        }
+       alert('form has been Sumbmitted...!')
+        return true
+
+    }
+</script>
+
+</html>
